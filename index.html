@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아주동 덕진 거제의 봄 - 공식 홍보관</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="container header-flex">
+        <div class="logo">
+            <img src="images/img1.png" alt="덕진 거제의 봄 로고">
+        </div>
+        <nav class="gnb">
+            <a href="#visual">메인</a>
+            <a href="#about">사업개요</a>
+            <a href="#location">입지안내</a>
+            <a href="#type">타입안내</a>
+            <a href="#contact">방문예약</a>
+        </nav>
+        <div class="header-tel">
+            <a href="tel:1800-1988"><i class="xi-call"></i> 1800-1988</a>
+        </div>
+    </div>
+</header>
+
+<section id="visual" class="main-visual">
+    <div class="visual-bg" style="background-image: url('images/img2.png');"></div>
+    <div class="visual-text" data-aos="fade-up">
+        <h2>파격적인 분양전환 실시</h2>
+        <p>실입주금 4,000만원대 / 내곡초등학교 바로 앞</p>
+        <div class="btn-group">
+            <a href="tel:1800-1988" class="btn btn-theme">전화문의</a>
+            <a href="#contact" class="btn btn-white">방문예약</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section container">
+    <h3 class="section-title" data-aos="fade-right">사업개요</h3>
+    <div class="content-flex">
+        <div class="info-table-wrap" data-aos="fade-up">
+            <table class="info-table">
+                <tr><th>위치</th><td>경남 거제시 아주동 1396</td></tr>
+                <tr><th>규모</th><td>총 417세대 / 6개동</td></tr>
+                <tr><th>준공</th><td>2015년 9월 8일 (분양전환 중)</td></tr>
+                <tr><th>특징</th><td>초등학교 도보 1분 안심 학세권</td></tr>
+            </table>
+        </div>
+        <div class="info-img" data-aos="zoom-in">
+            <img src="images/img3.png" alt="사업개요 이미지">
+        </div>
+    </div>
+</section>
+
+<section id="location" class="section bg-light">
+    <div class="container">
+        <h3 class="section-title" data-aos="fade-left">입지 및 미래가치</h3>
+        <div class="location-grid">
+            <div data-aos="fade-up">
+                <img src="images/img4.png" alt="교통망 비전">
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <img src="images/img5.png" alt="입지 지도">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="type" class="section container">
+    <h3 class="section-title">타입 안내</h3>
+    <div class="type-flex">
+        <div class="type-card" data-aos="flip-left">
+            <h4>28평형 ($67m^2$)</h4>
+            <img src="images/img6.png" alt="28평 평면도">
+        </div>
+        <div class="type-card" data-aos="flip-right">
+            <h4>33평형 ($84m^2$)</h4>
+            <img src="images/img7.png" alt="33평 평면도">
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section bg-theme-light">
+    <div class="container">
+        <h3 class="section-title">방문예약 신청</h3>
+        <form id="contactForm" class="contact-form" data-aos="fade-up">
+            <div class="input-grid">
+                <input type="text" id="name" placeholder="성함 (필수)" required>
+                <input type="tel" id="phone" placeholder="연락처 (필수)" required>
+                <select id="type-select">
+                    <option value="">관심 평형 선택</option>
+                    <option value="28">28평형</option>
+                    <option value="33">33평형</option>
+                </select>
+            </div>
+            <textarea id="message" rows="5" placeholder="문의사항을 남겨주세요."></textarea>
+            <div class="agree-box">
+                <input type="checkbox" id="agree" checked>
+                <label for="agree">개인정보 수집 및 이용에 동의합니다.</label>
+            </div>
+            <button type="submit" class="btn-submit">예약 신청하기</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p><strong>아주동 덕진 거제의 봄</strong> | 주소: 경남 거제시 아주동 1396</p>
+        <p>대표전화: 1800-1988 | 고객문의: 010-2255-0622</p>
+        <p>© 2026 1800-1988.com All Rights Reserved.</p>
+    </div>
+</footer>
+
+<div class="quick-menu">
+    <a href="tel:1800-1988" class="quick-btn tel"><i class="xi-call"></i> 전화상담</a>
+    <a href="#contact" class="quick-btn reserve"><i class="xi-calendar-check"></i> 방문예약</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
