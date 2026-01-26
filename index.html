@@ -23,6 +23,7 @@
         .text-center { text-align: center; }
         img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .mg-t40 { margin-top: 40px; }
+        .mg-t20 { margin-top: 20px; }
 
         /* 헤더 디자인 */
         header { position: fixed; width: 100%; top:0; background: #fff; border-bottom: 1px solid #eee; z-index: 1000; height: 80px; transition: 0.3s; }
@@ -32,7 +33,7 @@
         .gnb a:hover { color: var(--main); }
         .header-tel a { font-size: 24px; font-weight: 900; color: var(--main); text-decoration: none; }
 
-        /* 히어로 섹션 (배너 내 버튼 삭제) */
+        /* 히어로 섹션 */
         .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
         .hero-bg { position: absolute; top:0; left:0; width:100%; height:100%; background: url('images/img1.png') no-repeat center center/cover; z-index: -1; }
         .hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.35); z-index: -1; }
@@ -47,8 +48,9 @@
         /* 레이아웃 그리드 */
         .flex-content { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
         .content-item { flex: 1; min-width: 300px; }
-        .grid-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        
         .section-title { font-size: 36px; text-align: center; margin-bottom: 50px; position: relative; }
         .section-title::after { content:''; display: block; width: 60px; height: 4px; background: var(--main); margin: 15px auto 0; }
 
@@ -73,7 +75,7 @@
 
         @media (max-width: 768px) {
             .flex-header .gnb { display: none; }
-            .grid-gallery, .type-grid { grid-template-columns: 1fr; }
+            .grid-2, .type-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 34px; }
         }
     </style>
@@ -111,10 +113,10 @@
         </div>
         <div class="content-item" data-aos="fade-left">
             <table class="info-table">
-                [cite_start]<tr><th>위치</th><td>경남 거제시 아주동 1396 [cite: 5]</td></tr>
-                [cite_start]<tr><th>규모</th><td>총 417세대 / 6개동 [cite: 5, 96]</td></tr>
-                [cite_start]<tr><th>승인</th><td>2015년 9월 8일 사용승인 [cite: 5, 291]</td></tr>
-                [cite_start]<tr><th>주차</th><td>세대당 1.2대 주차 공간 [cite: 5, 95]</td></tr>
+                <tr><th>위치</th><td>경상남도 거제시 아주동 1396</td></tr>
+                <tr><th>세대수</th><td>총 417 세대 (101동~106동)</td></tr>
+                <tr><th>사용승인일</th><td>2015년 9월 8일 (준공 11년차)</td></tr>
+                <tr><th>주차대수</th><td>총 455대 (세대당 1.2대)</td></tr>
             </table>
         </div>
     </div>
@@ -127,21 +129,21 @@
 <section id="location" class="section bg-light">
     <div class="container">
         <h3 class="section-title" data-aos="fade-up">입지 및 미래가치</h3>
-        <div class="grid-gallery">
+        <div class="grid-2">
             <div data-aos="zoom-in">
-                [cite_start]<img src="images/img3.png" alt="KTX 남부내륙철도 계획 [cite: 15]">
-                [cite_start]<p class="text-center mg-t20">KTX 거제 종착역 확정 비전 [cite: 7, 15]</p>
+                <img src="images/img3.png" alt="KTX 남부내륙철도 계획">
+                <p class="text-center mg-t20">KTX 거제 종착역 확정 비전</p>
             </div>
             <div data-aos="zoom-in" data-aos-delay="200">
-                [cite_start]<img src="images/img4.png" alt="아주동 안심 학세권 지도 [cite: 58]">
-                [cite_start]<p class="text-center mg-t20">내곡초등학교 바로 앞 초품아 입지 [cite: 58, 100]</p>
+                <img src="images/img4.png" alt="아주동 안심 학세권 지도">
+                <p class="text-center mg-t20">내곡초등학교 바로 앞 초품아 입지</p>
             </div>
         </div>
         <div class="mg-t40" data-aos="fade-up">
-            [cite_start]<img src="images/img6.png" alt="생활 인프라 접근성 [cite: 98, 111]">
+            <img src="images/img6.png" alt="생활 인프라 접근성">
         </div>
         <div class="mg-t40" data-aos="fade-up">
-            [cite_start]<img src="images/img7.png" alt="미래 가치 개발 전망 [cite: 112, 135]">
+            <img src="images/img7.png" alt="미래 가치 개발 전망">
         </div>
     </div>
 </section>
@@ -149,31 +151,31 @@
 <section id="type" class="section container">
     <h3 class="section-title" data-aos="fade-up">평면 구성 및 타입 안내</h3>
     <div data-aos="fade-up">
-        [cite_start]<img src="images/img10.png" alt="평면 특징 및 설계 안내 [cite: 201, 214]">
+        <img src="images/img10.png" alt="평면 특징 및 설계 안내">
     </div>
     <div class="mg-t40" data-aos="fade-up">
-        [cite_start]<img src="images/img11.png" alt="전체 타입 요약 종합 [cite: 218, 226]">
+        <img src="images/img11.png" alt="전체 타입 요약 종합">
     </div>
 
     <div class="type-grid mg-t40">
         <div data-aos="fade-up">
-            [cite_start]<p class="text-center mg-t20" style="font-weight:700;">28평형 A타입 [cite: 208, 228]</p>
+            <p class="text-center mg-t20" style="font-weight:700;">28평형 A타입 (전용 67㎡)</p>
             <img src="images/img12.png" alt="28A 평면도">
         </div>
         <div data-aos="fade-up">
-            [cite_start]<p class="text-center mg-t20" style="font-weight:700;">28평형 B타입 [cite: 228]</p>
+            <p class="text-center mg-t20" style="font-weight:700;">28평형 B타입 (전용 67㎡)</p>
             <img src="images/img13.png" alt="28B 평면도">
         </div>
         <div data-aos="fade-up">
-            [cite_start]<p class="text-center mg-t20" style="font-weight:700;">33평형 A타입 [cite: 204, 228]</p>
+            <p class="text-center mg-t20" style="font-weight:700;">33평형 A타입 (전용 84㎡)</p>
             <img src="images/img14.png" alt="33A 평면도">
         </div>
         <div data-aos="fade-up">
-            [cite_start]<p class="text-center mg-t20" style="font-weight:700;">33평형 B타입 [cite: 228]</p>
+            <p class="text-center mg-t20" style="font-weight:700;">33평형 B타입 (전용 84㎡)</p>
             <img src="images/img15.png" alt="33B 평면도">
         </div>
         <div data-aos="fade-up">
-            [cite_start]<p class="text-center mg-t20" style="font-weight:700;">33평형 C타입 [cite: 228]</p>
+            <p class="text-center mg-t20" style="font-weight:700;">33평형 C타입 (전용 84㎡)</p>
             <img src="images/img16.png" alt="33C 평면도">
         </div>
     </div>
@@ -187,14 +189,14 @@
             <div data-aos="fade-left"><img src="images/img9.png" alt="단지 입체 조감도"></div>
         </div>
         <div class="mg-t40" data-aos="fade-up">
-            [cite_start]<img src="images/img5.png" alt="커뮤니티 및 편의시설 [cite: 86, 95]">
+            <img src="images/img5.png" alt="커뮤니티 및 시설 안내">
         </div>
     </div>
 </section>
 
 <section class="section container text-center">
     <div class="img-box" data-aos="zoom-in">
-        [cite_start]<img src="images/img18.png" alt="프리미엄 라이프 안내 [cite: 358, 362]">
+        <img src="images/img18.png" alt="프리미엄 라이프 안내">
     </div>
 </section>
 
@@ -223,7 +225,7 @@
 <div id="successMessage" class="success-overlay">
     <div class="success-box">
         <i class="xi-check-circle"></i>
-        <h4>예약이 접수되었습니다!</h4>
+        <h4>접수되었습니다!</h4>
         <p>확인 후 빠르게 연락드리겠습니다.</p>
         <button onclick="hideSuccess()" class="btn btn-main" style="background:var(--main); color:#fff; padding:10px 30px; border:none; border-radius:50px; margin-top:20px; cursor:pointer;">확인</button>
     </div>
@@ -231,8 +233,8 @@
 
 <footer>
     <div class="container">
-        [cite_start]<p><strong>아주동 덕진 거제의 봄</strong> | 주소: 경남 거제시 아주동 1396 [cite: 5, 291]</p>
-        <p>분양문의: 1551-6339 | [cite_start]시공사: 덕진종합건설 [cite: 291]</p>
+        <p><strong>아주동 덕진 거제의 봄</strong> | 주소: 경남 거제시 아주동 1396</p>
+        <p>분양문의: 1551-6339 | 시공사: 덕진종합건설</p>
         <p>© 2026 1551-6339.com All Rights Reserved.</p>
     </div>
 </footer>
