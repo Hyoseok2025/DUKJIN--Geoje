@@ -115,7 +115,7 @@
 <body>
 
 <header>
-    <div class="logo">1800-1988</div>
+    <div class="logo">1551-6339</div>
     <nav>
         <a href="#">사업개요</a>
         <a href="#">프리미엄</a>
@@ -174,12 +174,13 @@
 <footer>
     <div class="container">
         <p>현장 주소: 경상북도 구미시 수출대로3길 125 ㅣ 시행사: 공단4주공아파트 주택재건축정비사업조합</p>
-        <p>시공사: JH 중공업(구.한진중공업) ㅣ 대표전화: 1800-1988</p>
-        <p>©2026 1800-1988.com All Rights Reserved.</p>
+        <p>시공사: JH 중공업(구.한진중공업) ㅣ 대표전화: 1551-6339</p>
+        <p>©2026 1551-6339.com All Rights Reserved.</p>
     </div>
 </footer>
 
-<a href="tel:1800-1988" class="call-btn">전화상담: 1800-1988</a>
+<a href="tel:1551-6339" class="call-btn">전화상담: 1551-6339</a>
 
 </body>
 </html># DUKJIN--Geoje
+-
