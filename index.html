@@ -3,171 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아주동 덕진 거제의 봄 | 공식 홍보관</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>덕진 거제의 봄 - 방문 예약</title>
+    
+    <link rel="stylesheet" href="http://xeicon.net/xeicon/resources/css/xeicon.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
-<header id="header">
-    <div class="container header-flex">
-        <h1 class="logo">
-            <a href="/"><img src="images/img1.png" alt="덕진 거제의 봄 로고"></a>
-        </h1>
-        <nav class="gnb">
-            <a href="#about">사업개요</a>
-            <a href="#location">입지/가치</a>
-            <a href="#layout">단지안내</a>
-            <a href="#type">평면도</a>
-            <a href="#contact" class="nav-res">상담예약</a>
-        </nav>
-        <div class="header-tel">
-            <a href="tel:1551-6339"><i class="xi-call"></i> 1551-6339</a>
-        </div>
+    <div class="quick-bar">
+        <a href="tel:1551-6339" class="quick-link tel-link">
+            <i class="xi-call"></i> <span>전화문의</span>
+        </a>
+        <a href="javascript:void(0);" onclick="openModal()" class="quick-link res-link">
+            <i class="xi-calendar-check"></i> <span>방문예약</span>
+        </a>
     </div>
-</header>
 
-<section class="hero" id="home">
-    <div class="hero-bg" style="background-image: url('images/img1.png');"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content container" data-aos="fade-up">
-        <span class="badge">거제 아주동 프리미엄</span>
-        <h2>녹지가 어우러진<br><strong>주거 공간의 완성</strong></h2>
-        <p>파격적인 분양전환 실시! 즉시 입주 가능</p>
-        <div class="hero-btns">
-            <a href="tel:1551-6339" class="btn btn-main">전화 상담</a>
-            <a href="#contact" class="btn btn-sub">방문예약 신청</a>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="section">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">사업개요</h3>
-        <div class="content-flex">
-            <div class="content-img" data-aos="fade-right">
-                <img src="images/img2.png" alt="단지 상세 개요">
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h3>방문 예약 신청</h3>
+                <p>상담원이 확인 후 신속히 연락드립니다.</p>
             </div>
-            <div class="content-text" data-aos="fade-left">
-                <p class="summary">거제에서 가장 살기 좋은 아파트 단지를 소개합니다.</p>
-                <table class="info-table">
-                    <tr><th>위치</th><td>경남 거제시 아주동 1396</td></tr>
-                    <tr><th>규모</th><td>총 417세대 / 6개동</td></tr>
-                    <tr><th>승인</th><td>2015년 9월 8일 사용승인</td></tr>
-                    <tr><th>타입</th><td>28A/B, 33A/B/C 구성</td></tr>
-                </table>
-            </div>
+            
+            <form id="contactForm">
+                <div class="input-group">
+                    <label>성함</label>
+                    <input type="text" name="user_name" placeholder="성함을 입력하세요" required>
+                </div>
+                <div class="input-group">
+                    <label>연락처</label>
+                    <input type="tel" name="user_phone" placeholder="숫자만 입력하세요" required>
+                </div>
+                <div class="input-group">
+                    <label>관심 평형</label>
+                    <select name="interest_type">
+                        <option value="28평형">28평형 (67㎡)</option>
+                        <option value="33평형">33평형 (84㎡)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>방문 희망일</label>
+                    <input type="date" name="res_date" required>
+                </div>
+                <div class="agree-area">
+                    <input type="checkbox" id="agree" required checked>
+                    <label for="agree">개인정보 수집 및 이용 동의</label>
+                </div>
+                <button type="submit" class="btn-submit">예약 완료 및 이메일 전송</button>
+            </form>
         </div>
     </div>
-</section>
 
-<section id="location" class="section bg-light">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">입지 및 미래가치</h3>
-        <div class="grid-gallery">
-            <div class="gallery-item" data-aos="zoom-in">
-                <img src="images/img3.png" alt="KTX 남부내륙철도 계획">
-            </div>
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                <img src="images/img7.png" alt="도시개발 및 미래가치">
-            </div>
-        </div>
-        <div class="full-img mg-t40" data-aos="fade-up">
-            <img src="images/img6.png" alt="입지 및 교통 편의성 상세">
+    <div id="successMessage" class="success-overlay">
+        <div class="success-box">
+            <i class="xi-check-circle"></i>
+            <h4>예약이 접수되었습니다!</h4>
+            <p>담당자가 곧 연락드리겠습니다.</p>
+            <button onclick="hideSuccess()">확인</button>
         </div>
     </div>
-</section>
 
-<section class="section">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">안심 학세권 & 생활 인프라</h3>
-        <div class="content-img" data-aos="fade-up">
-            <img src="images/img4.png" alt="아주동 생활 지도 및 학군">
-        </div>
-    </div>
-</section>
-
-<section id="layout" class="section bg-light">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">단지 배치 및 조감도</h3>
-        <div class="layout-grid">
-            <div data-aos="fade-right">
-                <img src="images/img8.png" alt="단지 평면 배치도">
-            </div>
-            <div data-aos="fade-left">
-                <img src="images/img9.png" alt="단지 입체 조감도">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="type" class="section">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">평면 구성 및 타입 안내</h3>
-        <div class="type-main" data-aos="fade-up">
-            <img src="images/img10.png" alt="평면 구성 특징">
-        </div>
-        <div class="type-summary mg-t40" data-aos="fade-up">
-            <img src="images/img11.png" alt="전체 타입 요약">
-        </div>
-    </div>
-</section>
-
-<section class="section bg-light">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">타입별 상세 구조</h3>
-        <div class="detail-gallery">
-            <img src="images/img12.png" alt="28A 평면도" data-aos="fade-up">
-            <img src="images/img13.png" alt="28B 평면도" data-aos="fade-up">
-            <img src="images/img14.png" alt="33A 평면도" data-aos="fade-up">
-            <img src="images/img15.png" alt="33B 평면도" data-aos="fade-up">
-            <img src="images/img16.png" alt="33C 평면도" data-aos="fade-up">
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h3 class="section-title" data-aos="fade-up">단지 시설 및 현황</h3>
-        <div class="content-flex">
-            <div class="content-box" data-aos="fade-right">
-                <img src="images/img5.png" alt="단지 커뮤니티 및 편의시설">
-            </div>
-            <div class="content-box" data-aos="fade-left">
-                <img src="images/img17.png" alt="단지 호수 배치 현황">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section bg-light">
-    <div class="container text-center">
-        <h3 class="section-title" data-aos="fade-up">문의 및 방문 상담</h3>
-        <div class="contact-wrap" data-aos="zoom-in">
-            <img src="images/img18.png" alt="상담 안내">
-            <div class="call-action mg-t30">
-                <a href="tel:1551-6339" class="btn btn-main btn-lg">실시간 잔여세대 문의: 1551-6339</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <p><strong>아주동 덕진 거제의 봄 공식 홍보관</strong></p>
-        <p>경상남도 거제시 아주동 1396 | 시공사 : 덕진종합건설</p>
-        <p>분양상담: 1551-6339 | © 2026 1551-6339.com All Rights Reserved.</p>
-    </div>
-</footer>
-
-<div class="quick-bar">
-    <a href="tel:1551-6339" class="quick-tel"><i class="xi-call"></i> 전화문의</a>
-    <a href="#contact" class="quick-res"><i class="xi-calendar-check"></i> 방문예약</a>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
