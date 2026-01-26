@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>아주동 덕진 거제의 봄 | 공식 홍보관</title>
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
     <style>
-        /* 프리미엄 컬러 가이드 */
         :root { --main: #1cce1c; --sub: #004a99; --dark: #222; --light: #f8f9fa; }
-
         * { margin:0; padding:0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
         html { scroll-behavior: smooth; }
         body { color: var(--dark); line-height: 1.6; overflow-x: hidden; background: #fff; }
@@ -23,65 +18,39 @@
         .text-center { text-align: center; }
         img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .mg-t40 { margin-top: 40px; }
-        .mg-t20 { margin-top: 20px; }
-
-        /* 헤더 디자인 */
         header { position: fixed; width: 100%; top:0; background: #fff; border-bottom: 1px solid #eee; z-index: 1000; height: 80px; transition: 0.3s; }
         .flex-header { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .logo img { height: 45px; width: auto; box-shadow: none; }
-        .gnb a { margin-left: 25px; font-weight: 700; text-decoration: none; color: var(--dark); transition: 0.3s; }
+        .gnb a { margin-left: 25px; font-weight: 700; text-decoration: none; color: var(--dark); }
         .gnb a:hover { color: var(--main); }
         .header-tel a { font-size: 24px; font-weight: 900; color: var(--main); text-decoration: none; }
-
-        /* 히어로 섹션 */
         .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
         .hero-bg { position: absolute; top:0; left:0; width:100%; height:100%; background: url('images/img1.png') no-repeat center center/cover; z-index: -1; }
         .hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.35); z-index: -1; }
-        .badge { background: var(--main); padding: 5px 15px; border-radius: 20px; font-size: 14px; }
         .hero h1 { font-size: clamp(30px, 8vw, 60px); margin: 15px 0; line-height: 1.2; }
-
-        /* 정보 테이블 */
         .info-table { width: 100%; border-collapse: collapse; background: #fff; }
         .info-table th, .info-table td { padding: 20px; border: 1px solid #ddd; text-align: left; }
         .info-table th { background: #fdfdfd; color: var(--main); width: 30%; }
-
-        /* 레이아웃 그리드 */
-        .flex-content { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-        .content-item { flex: 1; min-width: 300px; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        
         .section-title { font-size: 36px; text-align: center; margin-bottom: 50px; position: relative; }
         .section-title::after { content:''; display: block; width: 60px; height: 4px; background: var(--main); margin: 15px auto 0; }
-
-        /* 방문예약 모달 */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
         .modal-content { background: #fff; margin: 10vh auto; padding: 40px; width: 90%; max-width: 450px; border-radius: 20px; position: relative; }
         .close-modal { position: absolute; right: 20px; top: 15px; font-size: 30px; cursor: pointer; color: #999; }
         .input-group input, .input-group select { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; outline: none; }
         .btn-submit { width: 100%; padding: 18px; background: var(--main); color: #fff; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }
-
-        /* 성공 애니메이션 */
         .success-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 3000; align-items: center; justify-content: center; text-align: center; }
         .success-box i { font-size: 70px; color: #27ae60; margin-bottom: 20px; }
-
-        /* 퀵 메뉴 */
         .quick-bar { position: fixed; bottom: 0; width: 100%; display: flex; height: 65px; z-index: 1000; }
         .quick-bar a { flex: 1; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-weight: 700; font-size: 18px; }
         .quick-tel { background: var(--main); }
         .quick-res { background: var(--sub); }
-
         footer { background: #222; color: #999; padding: 60px 0 120px; text-align: center; font-size: 14px; }
-
-        @media (max-width: 768px) {
-            .flex-header .gnb { display: none; }
-            .grid-2, .type-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 34px; }
-        }
+        @media (max-width: 768px) { .flex-header .gnb { display: none; } .grid-2, .type-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 34px; } }
     </style>
 </head>
 <body>
-
 <header id="header">
     <div class="container flex-header">
         <h1 class="logo"><a href="/"><img src="images/img1.png" alt="로고"></a></h1>
@@ -94,172 +63,106 @@
         <div class="header-tel"><a href="tel:1551-6339">1551-6339</a></div>
     </div>
 </header>
-
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content container" data-aos="fade-up">
-        <span class="badge">거제 아주동 핵심 학세권</span>
+        <span class="badge" style="background:var(--main); padding:5px 15px; border-radius:20px;">거제 아주동 핵심 학세권</span>
         <h1>녹지가 어우러진<br><strong>프리미엄 주거 공간</strong></h1>
         <p>파격적인 분양전환 실시! 즉시 입주 가능</p>
     </div>
 </section>
-
 <section id="about" class="section container">
     <h3 class="section-title" data-aos="fade-up">사업개요</h3>
     <div class="flex-content">
-        <div class="content-item" data-aos="fade-right">
-            <img src="images/img2.png" alt="단지 상세 개요">
-        </div>
+        <div class="content-item" data-aos="fade-right"><img src="images/img2.png" alt="단지 개요"></div>
         <div class="content-item" data-aos="fade-left">
             <table class="info-table">
-                <tr><th>위치</th><td>경상남도 거제시 아주동 1396</td></tr>
-                <tr><th>세대수</th><td>총 417 세대 (101동~106동)</td></tr>
-                <tr><th>사용승인일</th><td>2015년 9월 8일 (준공 11년차)</td></tr>
-                <tr><th>주차대수</th><td>총 455대 (세대당 1.2대)</td></tr>
+                <tr><th>위치</th><td>경남 거제시 아주동 1396</td></tr>
+                <tr><th>규모</th><td>총 417세대 / 6개동</td></tr>
+                <tr><th>준공</th><td>2015년 9월 8일 (준공 11년차)</td></tr>
+                <tr><th>주차</th><td>총 455대 (세대당 1.2대)</td></tr>
             </table>
         </div>
     </div>
-    <div class="mg-t40" data-aos="fade-up">
-        <p class="text-center mg-t20" style="font-weight:700;">[단지 호수 배치 현황]</p>
-        <img src="images/img17.png" alt="동호수 배치도">
-    </div>
+    <div class="mg-t40" data-aos="fade-up"><img src="images/img17.png" alt="동호수 배치도"></div>
 </section>
-
 <section id="location" class="section bg-light">
     <div class="container">
         <h3 class="section-title" data-aos="fade-up">입지 및 미래가치</h3>
         <div class="grid-2">
-            <div data-aos="zoom-in">
-                <img src="images/img3.png" alt="KTX 남부내륙철도 계획">
-                <p class="text-center mg-t20">KTX 거제 종착역 확정 비전</p>
-            </div>
-            <div data-aos="zoom-in" data-aos-delay="200">
-                <img src="images/img4.png" alt="아주동 안심 학세권 지도">
-                <p class="text-center mg-t20">내곡초등학교 바로 앞 초품아 입지</p>
-            </div>
+            <div data-aos="zoom-in"><img src="images/img3.png" alt="KTX 계획"><p class="text-center mg-t20">KTX 거제 종착역 확정 비전</p></div>
+            <div data-aos="zoom-in" data-aos-delay="200"><img src="images/img4.png" alt="학세권 지도"><p class="text-center mg-t20">내곡초등학교 바로 앞 입지</p></div>
         </div>
-        <div class="mg-t40" data-aos="fade-up">
-            <img src="images/img6.png" alt="생활 인프라 접근성">
-        </div>
-        <div class="mg-t40" data-aos="fade-up">
-            <img src="images/img7.png" alt="미래 가치 개발 전망">
-        </div>
+        <div class="mg-t40" data-aos="fade-up"><img src="images/img6.png" alt="생활 인프라"></div>
+        <div class="mg-t40" data-aos="fade-up"><img src="images/img7.png" alt="미래 가치"></div>
     </div>
 </section>
-
 <section id="type" class="section container">
     <h3 class="section-title" data-aos="fade-up">평면 구성 및 타입 안내</h3>
-    <div data-aos="fade-up">
-        <img src="images/img10.png" alt="평면 특징 및 설계 안내">
-    </div>
-    <div class="mg-t40" data-aos="fade-up">
-        <img src="images/img11.png" alt="전체 타입 요약 종합">
-    </div>
-
+    <div data-aos="fade-up"><img src="images/img10.png" alt="평면 특징"></div>
+    <div class="mg-t40" data-aos="fade-up"><img src="images/img11.png" alt="타입 요약"></div>
     <div class="type-grid mg-t40">
-        <div data-aos="fade-up">
-            <p class="text-center mg-t20" style="font-weight:700;">28평형 A타입 (전용 67㎡)</p>
-            <img src="images/img12.png" alt="28A 평면도">
-        </div>
-        <div data-aos="fade-up">
-            <p class="text-center mg-t20" style="font-weight:700;">28평형 B타입 (전용 67㎡)</p>
-            <img src="images/img13.png" alt="28B 평면도">
-        </div>
-        <div data-aos="fade-up">
-            <p class="text-center mg-t20" style="font-weight:700;">33평형 A타입 (전용 84㎡)</p>
-            <img src="images/img14.png" alt="33A 평면도">
-        </div>
-        <div data-aos="fade-up">
-            <p class="text-center mg-t20" style="font-weight:700;">33평형 B타입 (전용 84㎡)</p>
-            <img src="images/img15.png" alt="33B 평면도">
-        </div>
-        <div data-aos="fade-up">
-            <p class="text-center mg-t20" style="font-weight:700;">33평형 C타입 (전용 84㎡)</p>
-            <img src="images/img16.png" alt="33C 평면도">
-        </div>
+        <div data-aos="fade-up"><p class="text-center mg-t20" style="font-weight:700;">28평형 A타입</p><img src="images/img12.png" alt="28A"></div>
+        <div data-aos="fade-up"><p class="text-center mg-t20" style="font-weight:700;">28평형 B타입</p><img src="images/img13.png" alt="28B"></div>
+        <div data-aos="fade-up"><p class="text-center mg-t20" style="font-weight:700;">33평형 A타입</p><img src="images/img14.png" alt="33A"></div>
+        <div data-aos="fade-up"><p class="text-center mg-t20" style="font-weight:700;">33평형 B타입</p><img src="images/img15.png" alt="33B"></div>
+        <div data-aos="fade-up"><p class="text-center mg-t20" style="font-weight:700;">33평형 C타입</p><img src="images/img16.png" alt="33C"></div>
     </div>
 </section>
-
 <section class="section bg-light">
     <div class="container">
         <h3 class="section-title" data-aos="fade-up">단지 시설 및 조감도</h3>
         <div class="grid-2">
-            <div data-aos="fade-right"><img src="images/img8.png" alt="단지 평면 배치도"></div>
-            <div data-aos="fade-left"><img src="images/img9.png" alt="단지 입체 조감도"></div>
+            <div data-aos="fade-right"><img src="images/img8.png" alt="단지 평면"></div>
+            <div data-aos="fade-left"><img src="images/img9.png" alt="입체 조감도"></div>
         </div>
-        <div class="mg-t40" data-aos="fade-up">
-            <img src="images/img5.png" alt="커뮤니티 및 시설 안내">
-        </div>
+        <div class="mg-t40" data-aos="fade-up"><img src="images/img5.png" alt="커뮤니티"></div>
     </div>
 </section>
-
 <section class="section container text-center">
-    <div class="img-box" data-aos="zoom-in">
-        <img src="images/img18.png" alt="프리미엄 라이프 안내">
-    </div>
+    <div class="img-box" data-aos="zoom-in"><img src="images/img18.png" alt="홍보 이미지"></div>
 </section>
-
 <div id="reservationModal" class="modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal()">&times;</span>
-        <div class="modal-header">
-            <h3>방문 예약 신청</h3>
-            <p>상담원이 확인 후 즉시 연락드립니다.</p>
-        </div>
+        <div class="modal-header"><h3>방문 예약 신청</h3><p>상담원이 확인 후 즉시 연락드립니다.</p></div>
         <form id="contactForm">
             <div class="input-group"><input type="text" name="user_name" placeholder="성함 (필수)" required></div>
             <div class="input-group"><input type="tel" name="user_phone" placeholder="연락처 (필수)" required></div>
-            <div class="input-group">
-                <select name="interest_type">
-                    <option value="28평형">28평형 (67㎡)</option>
-                    <option value="33평형">33평형 (84㎡)</option>
-                </select>
-            </div>
+            <div class="input-group"><select name="interest_type"><option value="28평형">28평형 (67㎡)</option><option value="33평형">33평형 (84㎡)</option></select></div>
             <div class="input-group"><input type="date" name="res_date" required></div>
             <button type="submit" class="btn-submit">예약 신청하기</button>
         </form>
     </div>
 </div>
-
 <div id="successMessage" class="success-overlay">
-    <div class="success-box">
-        <i class="xi-check-circle"></i>
-        <h4>접수되었습니다!</h4>
-        <p>확인 후 빠르게 연락드리겠습니다.</p>
-        <button onclick="hideSuccess()" class="btn btn-main" style="background:var(--main); color:#fff; padding:10px 30px; border:none; border-radius:50px; margin-top:20px; cursor:pointer;">확인</button>
-    </div>
+    <div class="success-box"><i class="xi-check-circle"></i><h4>예약이 접수되었습니다!</h4><p>확인 후 빠르게 연락드리겠습니다.</p><button onclick="hideSuccess()" class="btn-submit" style="width:120px; margin-top:20px;">확인</button></div>
 </div>
-
 <footer>
     <div class="container">
-        <p><strong>아주동 덕진 거제의 봄</strong> | 주소: 경남 거제시 아주동 1396</p>
+        <p><strong>아주동 덕진 거제의 봄</strong> | 경남 거제시 아주동 1396</p>
         <p>분양문의: 1551-6339 | 시공사: 덕진종합건설</p>
         <p>© 2026 1551-6339.com All Rights Reserved.</p>
     </div>
 </footer>
-
 <div class="quick-bar">
     <a href="tel:1551-6339" class="quick-tel"><i class="xi-call"></i> 전화문의</a>
     <a href="javascript:void(0);" onclick="openModal()" class="quick-res"><i class="xi-calendar-check"></i> 방문예약</a>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     $(document).ready(function() {
-        emailjs.init("YOUR_PUBLIC_KEY"); 
+        emailjs.init("YOUR_PUBLIC_KEY"); // 공개키로 변경
         AOS.init({ duration: 1000 });
-
         window.openModal = function() { $('#reservationModal').fadeIn(200); }
         window.closeModal = function() { $('#reservationModal').fadeOut(200); }
-        
         $('#contactForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $(this).find('.btn-submit');
             btn.text('전송 중...').prop('disabled', true);
-
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this) // 서비스ID, 템플릿ID 변경
                 .then(function() {
                     closeModal();
                     $('#successMessage').css('display', 'flex').hide().fadeIn(400);
@@ -267,10 +170,8 @@
                 }, function() { alert("전송에 실패했습니다."); })
                 .finally(function() { btn.text('예약 신청하기').prop('disabled', false); });
         });
-
         window.hideSuccess = function() { $('#successMessage').fadeOut(400); }
     });
 </script>
-
 </body>
 </html>
