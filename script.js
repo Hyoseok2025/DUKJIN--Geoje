@@ -1,24 +1,32 @@
 $(document).ready(function() {
-    // AOS 애니메이션 초기화
-    AOS.init({
-        duration: 1000,
-        once: false
-    });
+    // 애니메이션 라이브러리 실행
+    AOS.init();
 
-    // 헤더 스크롤 효과
+    // 스크롤 시 헤더 스타일 변경
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 50) {
-            $('#header').css('background', 'rgba(255,255,255,0.95)');
+        if ($(this).scrollTop() > 100) {
+            $('#main-header').css({
+                'height': '70px',
+                'background': 'rgba(255,255,255,0.98)',
+                'box-shadow': '0 5px 20px rgba(0,0,0,0.05)'
+            });
         } else {
-            $('#header').css('background', '#fff');
+            $('#main-header').css({
+                'height': '80px',
+                'background': '#fff',
+                'box-shadow': 'none'
+            });
         }
     });
 
-    // 폼 제출 이벤트
-    $('#contactForm').on('submit', function(e) {
+    // 부드러운 앵커 이동
+    $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
-        const name = $('#name').val();
-        alert(name + "님, 방문 예약 상담 신청이 접수되었습니다. 곧 연락드리겠습니다.");
-        this.reset();
+        var target = $(this.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 80
+            }, 800);
+        }
     });
 });
