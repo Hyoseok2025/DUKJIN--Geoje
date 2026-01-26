@@ -1,48 +1,56 @@
-:root { --main-color: #1cce1c; --point-color: #004a99; --text-color: #333; --bg-gray: #f8f9fa; }
+:root { --primary: #1cce1c; --secondary: #004a99; --light: #f8f9fa; --dark: #333; }
 
-/* 레이아웃 초기화 */
-* { margin:0; padding:0; box-sizing: border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; color: var(--text-color); line-height: 1.6; }
+* { margin:0; padding:0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+html { scroll-behavior: smooth; }
+body { color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.section-padding { padding: 100px 0; }
+.section { padding: 100px 0; }
+.bg-light { background: var(--light); }
+.text-center { text-align: center; }
+.mg-t40 { margin-top: 40px; }
+.mg-t30 { margin-top: 30px; }
 
-/* 헤더 디자인 */
-header { position: fixed; top: 0; width: 100%; height: 80px; background: #fff; border-bottom: 1px solid #eee; z-index: 1000; transition: 0.3s; }
-.flex-header { display: flex; justify-content: space-between; align-items: center; height: 100%; }
-.logo img { height: 40px; }
-.main-nav ul { display: flex; list-style: none; }
-.main-nav li a { margin: 0 20px; font-weight: 700; text-decoration: none; font-size: 16px; }
-.main-tel { font-size: 22px; font-weight: 900; color: var(--main-color); text-decoration: none; }
+/* 이미지 공통 스타일 */
+img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: block; }
 
-/* 메인 히어로 */
-.main-hero { position: relative; height: 100vh; display: flex; align-items: center; color: #fff; overflow: hidden; }
-.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: 5s scale; }
-.main-hero:hover .hero-bg { scale: 1.1; }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
-.hero-content { position: relative; z-index: 1; }
-.badge { background: var(--main-color); padding: 5px 15px; border-radius: 20px; font-size: 14px; }
-.hero-content h2 { font-size: 60px; line-height: 1.2; margin: 20px 0; }
-.hero-content h2 strong { color: var(--main-color); }
+/* 헤더 */
+header { position: fixed; width: 100%; top:0; background: #fff; border-bottom: 1px solid #eee; z-index: 1000; height: 80px; }
+.header-flex { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo img { height: 45px; box-shadow: none; width: auto; }
+.gnb a { margin-left: 25px; font-weight: 700; text-decoration: none; color: var(--dark); }
+.gnb a:hover, .gnb a.nav-res { color: var(--primary); }
+.header-tel a { font-size: 22px; font-weight: 900; color: var(--primary); text-decoration: none; }
 
-/* 버튼 디자인 */
-.btn { padding: 15px 40px; border-radius: 5px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; margin-right: 10px; }
-.btn-primary { background: var(--main-color); color: #fff; }
-.btn-outline { border: 2px solid #fff; color: #fff; }
-.btn-primary:hover { background: #18b518; transform: translateY(-3px); }
+/* 히어로 */
+.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
+.hero-bg { position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; z-index: -1; }
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.35); z-index: -1; }
+.badge { background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 14px; }
+.hero h1 { font-size: clamp(32px, 5vw, 60px); margin: 15px 0; }
+.btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; margin: 10px; cursor: pointer; border: none; }
+.btn-main { background: var(--primary); color: #fff; }
+.btn-sub { background: #fff; color: var(--primary); }
+.btn-lg { font-size: 20px; width: 100%; max-width: 500px; }
 
-/* 입지 안내 */
-.location-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-top: 50px; }
-.map-box img, .vision-box img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+/* 섹션 공통 */
+.section-title { font-size: 36px; text-align: center; margin-bottom: 60px; position: relative; }
+.section-title::after { content:''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 15px auto 0; }
+.content-flex { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+.content-img, .content-text, .content-box { flex: 1; min-width: 300px; }
 
-/* 평면 카드 */
-.plan-tabs { display: flex; gap: 30px; }
-.plan-card { flex: 1; background: #fff; padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
-.plan-card:hover { border-color: var(--main-color); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-.plan-img img { max-width: 100%; margin-bottom: 20px; }
+/* 표 */
+.info-table { width: 100%; border-collapse: collapse; background: #fff; }
+.info-table th, .info-table td { padding: 18px; border: 1px solid #ddd; text-align: left; }
+.info-table th { background: #fdfdfd; color: var(--primary); width: 30%; }
 
-/* 퀵 버튼 및 푸터 */
-.mobile-quick { position: fixed; bottom: 0; width: 100%; display: flex; height: 60px; z-index: 1000; }
-.mobile-quick a { flex: 1; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; text-decoration: none; }
-.quick-tel { background: var(--main-color); }
-.quick-res { background: var(--point-color); }
-.main-footer { background: #222; color: #999; padding: 60px 0 100px; text-align: center; }
+/* 그리드 레이아웃 */
+.grid-gallery, .layout-grid, .detail-gallery { display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+@media (max-width: 768px) { .grid-gallery, .layout-grid, .detail-gallery { grid-template-columns: 1fr; } }
+
+/* 퀵바 */
+.quick-bar { position: fixed; bottom: 0; width: 100%; display: flex; height: 60px; z-index: 1000; }
+.quick-bar a { flex: 1; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-weight: 700; }
+.quick-tel { background: var(--primary); }
+.quick-res { background: var(--secondary); }
+
+.footer { background: #222; color: #999; padding: 60px 0 100px; text-align: center; font-size: 14px; }
