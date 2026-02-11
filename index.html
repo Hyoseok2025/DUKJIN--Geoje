@@ -28,7 +28,7 @@
         .flex-header { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .logo img { height: 45px; width: auto; box-shadow: none; }
         .header-info { text-align: right; }
-        .user-contact { font-size: 13px; color: #666; margin-bottom: 2px; }
+        .user-contact { font-size: 13px; color: #666; margin-bottom: 2px; font-weight: 500; }
         .header-tel a { font-size: 22px; font-weight: 900; color: var(--main); text-decoration: none; }
 
         /* 히어로 섹션 */
@@ -49,9 +49,9 @@
         }
         input[type="date"] { min-height: 48px; }
 
-        /* 개인정보 동의 */
+        /* 개인정보 동의 (중략 없이 전체 출력) */
         .agree-toggle { font-size: 13px; color: #666; cursor: pointer; text-decoration: underline; margin-top: 5px; display: inline-block; }
-        .agree-content { display: none; background: #f9f9f9; padding: 12px; border-radius: 8px; font-size: 12px; color: #666; line-height: 1.5; margin-top: 8px; border: 1px solid #eee; max-height: 120px; overflow-y: auto; }
+        .agree-content { display: none; background: #f9f9f9; padding: 15px; border-radius: 8px; font-size: 12px; color: #666; line-height: 1.6; margin-top: 8px; border: 1px solid #eee; max-height: 180px; overflow-y: auto; text-align: left; }
         
         .btn-submit { width: 100%; padding: 16px; background: var(--main); color: #fff; border: none; border-radius: 10px; font-size: 17px; font-weight: bold; cursor: pointer; }
 
@@ -167,7 +167,11 @@
                 </label>
                 <div class="agree-toggle" onclick="toggleAgree()">[동의서 내용 보기/닫기]</div>
                 <div id="agreeContent" class="agree-content">
-                    개인정보 이용 및 취급 동의서 [덕진거제의봄]... (내용 중략)
+                    <strong>개인정보 수집 및 이용 동의서</strong><br><br>
+                    1. 수집 및 이용 목적: 아주동 덕진 거제의 봄 분양 상담, 방문 예약 관리 및 안내 문자 발송<br>
+                    2. 수집 항목: 성함, 연락처, 관심 평형, 방문 희망 일자<br>
+                    3. 보유 및 이용 기간: 목적 달성 시 혹은 고객 요청 시 지체 없이 파기 (최대 3개월 보유)<br>
+                    4. 동의 거부 권리: 귀하는 본 동의를 거부할 권리가 있으나, 거부 시 방문 예약 상담 서비스 이용이 제한될 수 있습니다.
                 </div>
             </div>
             <button type="submit" class="btn-submit">예약 신청하기</button>
